@@ -1,0 +1,51 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.RentalContracts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details on Rental Contract";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Details on Rental Contract</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.RentalContractId)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.RentalContractId)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.ContractNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.ContractNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.EmployeeId)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.EmployeeId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.ContractDate)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.ContractDate)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.FirstName)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.LastName)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.MaritalStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.MaritalStatus)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.NumberOfChildren)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.NumberOfChildren)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.ApartmentId)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.ApartmentId)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.RentalContract.RentStartDate)</dt>
+        <dd>@Html.DisplayFor(model => model.RentalContract.RentStartDate)</dd>
+    </dl>
+</div>
+
+<div class="text-center">
+    <a asp-page="./Edit" asp-route-id="@Model.RentalContract.RentalContractId">Edit/Update this Rental Contract</a> ::
+    <a asp-page="./Delete" asp-route-id="@Model.RentalContract.RentalContractId">Delete/Cancel this Rental Contract</a> ::
+    <a asp-page="./Index">Rental Contracts</a>
+</div>

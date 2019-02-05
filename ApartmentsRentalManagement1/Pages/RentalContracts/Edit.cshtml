@@ -1,0 +1,106 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.RentalContracts.EditModel
+
+@{
+    ViewData["Title"] = "Edit/Update Rental Contract";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class=" bold blue common-font text-center">Edit/Update Rental Contract</h2>
+
+<hr />
+
+<form method="post">
+    <div class="containment">
+        <div class="form-horizontal common-font">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RentalContract.RentalContractId" />
+            <div class="form-group">
+                <label asp-for="RentalContract.ContractNumber" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.ContractNumber" class="form-control" />
+                    <span asp-validation-for="RentalContract.ContractNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.EmployeeId" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <select asp-for="RentalContract.EmployeeId" class="form-control">
+                        @foreach (KeyValuePair<int, string> empl in Model.StaffMembers)
+                        {
+                            <option value=@empl.Key>@empl.Value</option>
+                        }
+                    </select>
+                    <span asp-validation-for="RentalContract.EmployeeId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.ContractDate" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.ContractDate" class="form-control" />
+                    <span asp-validation-for="RentalContract.ContractDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.FirstName" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.FirstName" class="form-control" />
+                    <span asp-validation-for="RentalContract.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.LastName" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.LastName" class="form-control" />
+                    <span asp-validation-for="RentalContract.LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.MaritalStatus" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <select asp-for="RentalContract.MaritalStatus" asp-items="Model.MaritalsStatus" class="form-control"></select>
+                    <span asp-validation-for="RentalContract.MaritalStatus" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.NumberOfChildren" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.NumberOfChildren" class="form-control" />
+                    <span asp-validation-for="RentalContract.NumberOfChildren" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.ApartmentId" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <select asp-for="RentalContract.ApartmentId" class="form-control">
+                        @foreach (KeyValuePair<int, string> aprt in Model.Residences)
+                        {
+                            <option value=@aprt.Key>@aprt.Value</option>
+                        }
+                    </select>
+                    <span asp-validation-for="RentalContract.ApartmentId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalContract.RentStartDate" class="control-label col-md-5 blue"></label>
+                <div class="col-md-7">
+                    <input asp-for="RentalContract.RentStartDate" class="form-control" />
+                    <span asp-validation-for="RentalContract.RentStartDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">
+                    <a asp-page="./Index">Rental Contracts</a>
+                </label>
+                <div class="col-md-7">
+                    <input type="submit" value="Update Rental Contract" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

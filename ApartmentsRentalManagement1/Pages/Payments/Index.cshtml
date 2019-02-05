@@ -1,0 +1,45 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Payments.IndexModel
+
+@{
+    ViewData["Title"] = "Payments";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Payments</h2>
+
+<hr />
+
+<table class="table table-hover common-font">
+    <thead>
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Payment[0].PaymentId)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Payment[0].ReceiptNumber)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Payment[0].EmployeeId)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Payment[0].RentalContractId)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Payment[0].PaymentDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Payment[0].Amount)</th>
+            <th>@Html.DisplayNameFor(model => model.Payment[0].Notes)</th>
+            <th><a asp-page="Create">Make New Payment</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Payment)
+        {
+            <tr>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.PaymentId)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.ReceiptNumber)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.EmployeeId)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.RentalContractId)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.PaymentDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                <td>@Html.DisplayFor(modelItem => item.Notes)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.PaymentId">Edit</a> ::
+                    <a asp-page="./Details" asp-route-id="@item.PaymentId">Details</a> ::
+                    <a asp-page="./Delete" asp-route-id="@item.PaymentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

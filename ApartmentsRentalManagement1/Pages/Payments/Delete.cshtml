@@ -1,0 +1,44 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Payments.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Payment";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue text-center">Delete/Cancel Rent Payment</h2>
+
+<hr />
+
+<h3 class="common-font blue text-center">Are you sure you want to delete/cancel this payment?</h3>
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.Payment.PaymentId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.PaymentId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.ReceiptNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.ReceiptNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.EmployeeId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.EmployeeId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.RentalContractId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.RentalContractId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.PaymentDate)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.PaymentDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.Amount)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.Amount)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.Notes)</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Payment.PaymentId" />
+        <input type="submit" value="Delete Payment" class="btn btn-primary" /> |
+        <a asp-page="./Index">Payments</a>
+    </form>
+</div>

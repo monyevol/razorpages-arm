@@ -1,0 +1,44 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Apartments.IndexModel
+
+@{
+    ViewData["Title"] = "Apartments";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Apartments</h2>
+
+<hr />
+
+<table class="table table-hover common-font">
+    <thead>
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Apartment[0].ApartmentId)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Apartment[0].UnitNumber)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Apartment[0].Bedrooms)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Apartment[0].Bathrooms)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Apartment[0].MonthlyRate)</th>
+            <th>@Html.DisplayNameFor(model => model.Apartment[0].SecurityDeposit)</th>
+            <th>@Html.DisplayNameFor(model => model.Apartment[0].OccupancyStatus)</th>
+            <th><a asp-page="Create">Create New Apartment</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Apartment) {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.ApartmentId)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.UnitNumber)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.Bedrooms)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.Bathrooms)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.MonthlyRate)</td>
+            <td>@Html.DisplayFor(modelItem => item.SecurityDeposit)</td>
+            <td>@Html.DisplayFor(modelItem => item.OccupancyStatus)</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ApartmentId">Edit</a> :: 
+                <a asp-page="./Details" asp-route-id="@item.ApartmentId">Details</a> :: 
+                <a asp-page="./Delete" asp-route-id="@item.ApartmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

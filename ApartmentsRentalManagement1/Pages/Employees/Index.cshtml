@@ -1,0 +1,40 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Employees";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Employees - Staff Members</h2>
+
+<hr />
+
+<table class="table table-hover common-font">
+    <thead>
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Employee[0].EmployeeId)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Employee[0].EmployeeNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.Employee[0].FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.Employee[0].LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Employee[0].EmploymentTitle)</th>
+            <th><a asp-page="Create">Hire New Employee</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Employee) {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.EmployeeId)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.EmployeeNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmploymentTitle)</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EmployeeId">Edit</a> :: 
+                <a asp-page="./Details" asp-route-id="@item.EmployeeId">Details</a> :: 
+                <a asp-page="./Delete" asp-route-id="@item.EmployeeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

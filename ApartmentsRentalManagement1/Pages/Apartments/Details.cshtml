@@ -1,0 +1,41 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Apartments.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Apartment Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.Apartment.ApartmentId)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.ApartmentId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Apartment.UnitNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.UnitNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Apartment.Bedrooms)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.Bedrooms)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Apartment.Bathrooms)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.Bathrooms)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Apartment.MonthlyRate)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.MonthlyRate)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Apartment.SecurityDeposit)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.SecurityDeposit)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Apartment.OccupancyStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.Apartment.OccupancyStatus)</dd>
+    </dl>
+</div>
+<div class="text-center">
+    <a asp-page="./Edit" asp-route-id="@Model.Apartment.ApartmentId">Edit/Change Apartment</a> ::
+    <a asp-page="./Delete" asp-route-id="@Model.Apartment.ApartmentId">Delete Apartment</a> ::
+    <a asp-page="./Index">Apartments</a>
+</div>

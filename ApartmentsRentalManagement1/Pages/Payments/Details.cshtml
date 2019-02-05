@@ -1,0 +1,42 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Payments.DetailsModel
+
+@{
+    ViewData["Title"] = "Payment Details";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Rent Payment Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.Payment.PaymentId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.PaymentId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.ReceiptNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.ReceiptNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Payment.EmployeeId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.EmployeeId)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Payment.RentalContractId)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.RentalContractId)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Payment.PaymentDate)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.PaymentDate)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Payment.Amount)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.Amount)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Payment.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Payment.Notes)</dd>
+    </dl>
+</div>
+
+<div class="text-center">
+    <a asp-page="./Edit" asp-route-id="@Model.Payment.PaymentId">Edit/Update this Payment</a> ::
+    <a asp-page="./Delete" asp-route-id="@Model.Payment.PaymentId">Delete/Cancel this Payment</a> ::
+    <a asp-page="./Index">Payments</a>
+</div>

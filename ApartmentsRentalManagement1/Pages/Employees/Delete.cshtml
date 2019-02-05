@@ -1,0 +1,38 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Employees.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Employee";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue text-center">Delete Employee Record</h2>
+
+<hr />
+
+<h3 class="common-font blue text-center">Are you sure you want to let this employee go?</h3>
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmployeeId)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmployeeId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmployeeNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmployeeNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.FirstName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmploymentTitle)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmploymentTitle)</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Employee.EmployeeId" />
+        <input type="submit" value="Delete Employee" class="btn btn-primary" /> :: 
+        <a asp-page="./Index">Employees</a>
+    </form>
+</div>

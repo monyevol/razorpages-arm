@@ -1,0 +1,36 @@
+﻿@page
+@model ApartmentsRentalManagement1.Pages.Employees.DetailsModel
+
+@{
+    ViewData["Title"] = "Employee Details";
+    Layout = "~/Pages/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Employee Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmployeeId)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmployeeId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmployeeNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmployeeNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.FirstName)</dd>
+        
+        <dt>@Html.DisplayNameFor(model => model.Employee.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Employee.EmploymentTitle)</dt>
+        <dd>@Html.DisplayFor(model => model.Employee.EmploymentTitle)</dd>
+    </dl>
+</div>
+
+<div class="text-center">
+    <a asp-page="./Edit" asp-route-id="@Model.Employee.EmployeeId">Edit/Update this Employee Record</a> ::
+    <a asp-page="./Delete" asp-route-id="@Model.Employee.EmployeeId">Delete this Employee Record</a> ::
+    <a asp-page="./Index">Employees</a>
+</div>
